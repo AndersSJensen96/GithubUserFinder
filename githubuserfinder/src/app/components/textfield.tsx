@@ -1,5 +1,8 @@
-export default function({fieldPlaceholder : string}){
+import styles from './textfield.module.css'
+export default function({fieldPlaceholder} : {fieldPlaceholder : any}){
+  return(
     <>
-        <input placeholder={fieldPlaceholder}/>
+        <input className={styles.inputField} placeholder={fieldPlaceholder}/>
     </>
+  )
 }

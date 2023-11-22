@@ -6,3 +6,54 @@
   padding: 6rem;
   min-height: 100vh;
 }
+.flexColoumn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.flexColoumn > div{
+  display: block;
+  width: 80%;
+}
+.flexColoumn > div:first-child{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70%;
+  margin-bottom: 50px;
+}
+
+/*Second Div and related child elements*/
+.flexColoumn > div:nth-child(2){
+  height: 30%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  
+}
+
+
+/*searchbar*/
+.flexColoumn > div:nth-child(2) > :first-child{
+  border-radius: 0;
+  width: 100%;
+}
+/*searchButton*/
+.flexColoumn > div:nth-child(2) > :nth-child(2){
+  width: 20%;
+  border-radius: 0;
+  border: 0;
+  position: absolute;
+  height: 90%;
+  left: 79%;
+  top: 5%
+}
+
+.searchImage{
+  height: 50%;
+  width: 50%;
+}
