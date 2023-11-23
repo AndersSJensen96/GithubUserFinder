@@ -1,26 +1,70 @@
-import { ReactElement } from 'react';
 import styles from './profile.module.css'
+import Image from 'next/image'
 export default function({user} : {user : User | undefined}){
     
     if(user != undefined){
         return(
             <div className={styles.drawer}>
                 <div>
-                    <h2>{user.login}</h2>
-                    <p>Name: {(user.name != null) ? user.name : "Not Available"}</p>
-                    <p>Email: {(user.email != null) ? user.email : "Not Available"}</p>
-                    <p>Company: {(user.company != null) ? user.company : "Not Available"}</p>
-                    <p>Hirable: {(user.hirable != null) ? user.hirable : "Not Available"}</p>
-                    <p>Bio: {(user.bio != null) ? user.bio : "Not Available"}</p>
-                    <a href={user.html_url} target='_blank'>Check out {user?.login} full profile!</a>
+                    <h2>{user.login} information</h2>
+                    <table>
+                        <thead>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Current Company
+                            </th>
+                            <th>
+                                Hirable
+                            </th>
+                        </thead>
+                        <tbody>
+                            <td>
+                                <p>
+                                    {(user.name != null) ? user.name : "Not Available"}
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    {(user.email != null) ? user.email : "Not Available"}
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    {(user.company != null) ? user.company : "Not Available"}
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    {(user.hirable != null) ? user.hirable : "Not Available"}
+                                </p>
+                            </td>
+                        </tbody>
+                    </table>
+                    <h2>Profile Bio</h2>
+                    <div>
+                        <p>
+                            {(user.bio != null) ? user.bio : "Not Available"}
+                        </p>
+                    </div>
+                    <a href={user.html_url} target='_blank'>Click here to check out {user?.login} full profile!</a>
                 </div>
             </div>
         )
     }else{
         return(
-            <p>
-                No User Found
-            </p>
+            <div className={styles.drawer}>
+                <div>
+                    <h2>
+                        No User Found
+                    </h2>
+                    <Image src="/no_user.webp" width={200} height={200} alt="Github-logo"/>
+                </div>
+            </div>
         )
     }
 

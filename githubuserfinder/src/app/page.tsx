@@ -21,21 +21,24 @@ export default function Home() {
   }
 
   async function searchForUser(query : string){
-    try {
-      let url : string = `https://api.github.com/users/${query}`;
-    
-      const response = await fetch(url);
-      const responseUser = await response.json();
-      if(!responseUser.hasOwnProperty('id')){
-        setUser(undefined);
-      }else{
-        setUser(responseUser as User);
-      }
+    if(query != ''){
+      try {
+        let url : string = `https://api.github.com/users/${query}`;
       
-
-    } catch (error) {
+        const response = await fetch(url);
+        const responseUser = await response.json();
+        if(!responseUser.hasOwnProperty('id')){
+          setUser(undefined);
+        }else{
+          setUser(responseUser as User);
+        }
+        
+      } catch (error) {
+        setUser(undefined)
+        console.log(error)
+      }
+    }else{
       setUser(undefined)
-      console.log(error)
     }
   }
   
