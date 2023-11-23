@@ -1,8 +1,44 @@
+'use client'
 import styles from './page.module.css'
 import Image from 'next/image'
 import TextField from './components/textfield'
-import Button from './components/button'
+import { useEffect, useState } from 'react'
+import Profile from './components/profile'
+
+
 export default function Home() {
+
+  const [userQuery, setUserQuery] = useState('');
+  const [user, setUser] = useState<User>();
+
+  useEffect(() => {
+    const timeOut = setTimeout(() => searchForUser(userQuery),1000);
+    return () => clearTimeout(timeOut);
+  }, [userQuery]);
+
+  function handleInputChange(inputValue : string) : void{
+    setUserQuery(inputValue);
+  }
+
+  async function searchForUser(query : string){
+    try {
+      let url : string = `https://api.github.com/users/${query}`;
+    
+      const response = await fetch(url);
+      const responseUser = await response.json();
+      if(!responseUser.hasOwnProperty('id')){
+        setUser(undefined);
+      }else{
+        setUser(responseUser as User);
+      }
+      
+
+    } catch (error) {
+      setUser(undefined)
+      console.log(error)
+    }
+  }
+  
   return (
     <main className={styles.main}>
       <div className={styles.flexColoumn}>
@@ -11,11 +47,10 @@ export default function Home() {
             <Image src="/github-mark.svg" width={200} height={200} alt="Github-logo"/>
           </div>
            <div>
-            <TextField fieldPlaceholder="Input Github username here"/>
-            <Button><Image src="/magnifying-glass.svg" width={0} height={0} className={styles.searchImage} alt="Magnifying glass"/></Button>
+            <TextField query={userQuery} event={handleInputChange}>Input Github username here</TextField>
           </div>
-          
       </div>
+      <Profile user={user}/>
     </main>
   )
 }

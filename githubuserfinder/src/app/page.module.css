@@ -5,13 +5,19 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  position: relative;
 }
+.main:nth-child(2){
+  min-height: 50%;
+}
+
 .flexColoumn{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: 50%;
 }
 .flexColoumn > div{
   display: block;
@@ -36,7 +42,6 @@
   
 }
 
-
 /*searchbar*/
 .flexColoumn > div:nth-child(2) > :first-child{
   border-radius: 0;
@@ -57,3 +62,4 @@
   height: 50%;
   width: 50%;
 }
+

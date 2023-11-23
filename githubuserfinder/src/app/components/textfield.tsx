@@ -1,8 +1,8 @@
 import styles from './textfield.module.css'
-export default function({fieldPlaceholder} : {fieldPlaceholder : any}){
+export default function({children, event, query} : {children : string, event : any, query : string}){
   return(
     <>
-        <input className={styles.inputField} placeholder={fieldPlaceholder}/>
+        <input className={styles.inputField} placeholder={children} value={query} onChange={(e) => {event(e.target.value)}}/>
     </>
   )
 }
