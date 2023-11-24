@@ -6,6 +6,7 @@ Use commands to run development, production or to run jest tests.
 ```bash
 npm run dev
 # or
+npm build
 npm start
 #or
 npm test

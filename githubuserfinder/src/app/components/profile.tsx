@@ -1,6 +1,6 @@
 import styles from './profile.module.css'
 import Image from 'next/image'
-export default function({user} : {user : User | undefined}){
+export default function Profile({user} : {user : User | undefined}){
     
     if(user != undefined){
         return(
