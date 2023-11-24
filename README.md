@@ -13,7 +13,7 @@ npm test
 ```
 
 Open [http://localhost:3000] to see the running project.
-
+(remember to run npm install to get required packages)
 
 
 # Choices
