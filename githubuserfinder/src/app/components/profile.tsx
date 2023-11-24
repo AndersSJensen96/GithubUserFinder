@@ -9,40 +9,44 @@ export default function({user} : {user : User | undefined}){
                     <h2>{user.login} information</h2>
                     <table>
                         <thead>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Email
-                            </th>
-                            <th>
-                                Current Company
-                            </th>
-                            <th>
-                                Hirable
-                            </th>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Current Company
+                                </th>
+                                <th>
+                                    Hirable
+                                </th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <td>
-                                <p>
-                                    {(user.name != null) ? user.name : "Not Available"}
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    {(user.email != null) ? user.email : "Not Available"}
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    {(user.company != null) ? user.company : "Not Available"}
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    {(user.hirable != null) ? user.hirable : "Not Available"}
-                                </p>
-                            </td>
+                            <tr>
+                                <td>
+                                    <p>
+                                        {(user.name != null) ? user.name : "Not Available"}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {(user.email != null) ? user.email : "Not Available"}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {(user.company != null) ? user.company : "Not Available"}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {(user.hirable != null) ? user.hirable : "Not Available"}
+                                    </p>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <h2>Profile Bio</h2>

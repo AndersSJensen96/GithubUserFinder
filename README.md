@@ -28,3 +28,7 @@ My design is simple. I threw together an input field and made it so you can type
 The box holding the profile information is under the inputfield and is made to hold as much information I found relevant, with the addition of a link leading directly to the profile on github for more information.
 If no user is found, the result in that box would be a message and an image indicating that nothing was found with the query.
 
+## Tests
+Haven't worked with jest before, but got something up and running that checks whether the heading "Github User Finder" can be found.
+After that I thought I to test my profile after the api function has run. But because om certain setbacks I couldn't quite get it to work like I would've 
+wanted it too.
