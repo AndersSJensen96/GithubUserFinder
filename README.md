@@ -29,6 +29,12 @@ The box holding the profile information is under the inputfield and is made to h
 If no user is found, the result in that box would be a message and an image indicating that nothing was found with the query.
 
 ## Tests
+<<<<<<< HEAD
 Haven't worked with jest before, but got something up and running that checks whether different rendering.
 After that I wanted to test my searchForUser function, but because of problems regarding mocking the global fetch, I haven't been able to get it to work.
 Thinking, maybe changing to axios might work or using msw (mock service worker).
+=======
+Haven't worked with jest before, but got something up and running that checks whether the heading "Github User Finder" can be found.
+After that I thought I to test my profile after the api function has run. But because of certain setbacks I couldn't quite get it to work like I would've 
+wanted it too.
+>>>>>>> refs/remotes/origin/main
