@@ -6,7 +6,7 @@ export default function({user} : {user : User | undefined}){
         return(
             <div className={styles.drawer}>
                 <div>
-                    <h2>{user.login} information</h2>
+                    <h2 data-testid="profile-heading">{user.login} information</h2>
                     <table>
                         <thead>
                             <tr>

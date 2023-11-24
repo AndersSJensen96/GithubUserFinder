@@ -13,6 +13,8 @@ export default function Home() {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
+    // let getUser = async () => setUser(await searchForUser(userQuery) as User);
+    // getUser();
     const timeOut = setTimeout(async () =>  setUser(await searchForUser(userQuery) as User), 1000);
     return () => clearTimeout(timeOut);
   }, [userQuery]);
@@ -21,13 +23,11 @@ export default function Home() {
     setUserQuery(inputValue);
   }
 
-  
-  
   return (
     <main className={styles.main}>
       <div className={styles.flexColoumn}>
           <div>
-            <h1 id="test">Github User Finder</h1>
+            <h1 data-testid="main-heading">Github User Finder</h1>
             <Image src="/github-mark.svg" width={200} height={200} alt="Github-logo"/>
           </div>
            <div>
