@@ -30,5 +30,5 @@ If no user is found, the result in that box would be a message and an image indi
 
 ## Tests
 Haven't worked with jest before, but got something up and running that checks whether the heading "Github User Finder" can be found.
-After that I thought I to test my profile after the api function has run. But because om certain setbacks I couldn't quite get it to work like I would've 
+After that I thought I to test my profile after the api function has run. But because of certain setbacks I couldn't quite get it to work like I would've 
 wanted it too.
